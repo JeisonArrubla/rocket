@@ -34,7 +34,8 @@ function registrarUsuario() {
             if (parsedResult != false) {
                 $("#register-error").addClass("d-none");
                 let cedula = parsedResult['cedula'];
-                document.location.href = "home.html?cedula=" + cedula;
+                $("#register-successful").removeClass("d-none");
+                $("#register-successful").html("Registro exitoso");
             } else {
                 $("#register-error").removeClass("d-none");
                 $("#register-error").html("Error en el registro del usuario");

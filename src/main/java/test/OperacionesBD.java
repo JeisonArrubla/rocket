@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package test;
 
 import beans.Usuarios;
@@ -9,19 +5,13 @@ import connection.DBConnection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- *
- * @author Jeison
- */
 public class OperacionesBD {
 
     public static void main(String[] args) {
         
-        //listarUsuarios();
+        listarUsuarios();
         //actualizarUsuarios("1111222333", "Miguel", "Pérez", "mperez@gmail.com", "3112113344", "peruano");
-        listarUsuarios();
-        registrarUsuarios();
-        listarUsuarios();
+        //registrarUsuarios();
 
     }
 
