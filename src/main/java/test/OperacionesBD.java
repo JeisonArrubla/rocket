@@ -5,7 +5,7 @@
 package test;
 
 import beans.Usuarios;
-import connection.ConnectionDB;
+import connection.DBConnection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -26,7 +26,7 @@ public class OperacionesBD {
     }
 
     public static void actualizarUsuarios(String cedula, String nombre, String apellido, String email, String telefono, String nacionalidad) {
-        ConnectionDB conn = new ConnectionDB();
+        DBConnection conn = new DBConnection();
 
         String sql = "UPDATE usuarios SET nombre = '" + nombre + "' WHERE cedula = " + cedula;
 
@@ -42,7 +42,7 @@ public class OperacionesBD {
     
     public static void listarUsuarios(){
         
-        ConnectionDB conn = new ConnectionDB();
+        DBConnection conn = new DBConnection();
 
         String sql = "SELECT * FROM usuarios";
 
@@ -74,7 +74,7 @@ public class OperacionesBD {
     }
     
     public static void registrarUsuarios(){
-        ConnectionDB conn = new ConnectionDB();
+        DBConnection conn = new DBConnection();
         
         String sql = "INSERT INTO usuarios (cedula, nombre, apellido, email, telefono, nacionalidad) VALUES\n" +
 "(\"1111444555\", \"Marcos\", \"Méndez\", \"mm@gmail.com\", \"3113002211\", \"Mexicano\")";

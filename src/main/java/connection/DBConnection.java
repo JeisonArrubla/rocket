@@ -11,7 +11,7 @@ import java.sql.DriverManager;
  *
  * @author Jeison
  */
-public class ConnectionDB {
+public class DBConnection {
     
     Connection connection;
     
@@ -20,7 +20,7 @@ public class ConnectionDB {
     static String login = "root";
     static String password = "admin";
 
-    public ConnectionDB() {
+    public DBConnection() {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
