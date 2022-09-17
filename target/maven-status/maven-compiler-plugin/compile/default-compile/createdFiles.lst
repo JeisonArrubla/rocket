@@ -1,8 +1,12 @@
-connection\ConnectionDB.class
+controller\IngresosController.class
+servlets\ServletRegistrarIngreso.class
 beans\Habitaciones.class
+servlets\ServletRegistrarUsuarios.class
 controller\IUsuariosController.class
 controller\UsuariosController.class
 servlets\PruebaServlet.class
 beans\Usuarios.class
 beans\Ingresos.class
 test\OperacionesBD.class
+controller\IIngresosController.class
+connection\DBConnection.class

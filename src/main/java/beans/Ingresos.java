@@ -13,12 +13,12 @@ import java.util.Date;
 public class Ingresos {
     
     private String cedula;
-    private Date fechaLlegada;
-    private Date fechaSalida;
+    private String fechaLlegada;
+    private String fechaSalida;
     private String ciudadOrigen;
     private Integer idHabitacion;
 
-    public Ingresos(String cedula, Date fechaLlegada, Date fechaSalida, String ciudadOrigen, Integer idHabitacion) {
+    public Ingresos(String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen, Integer idHabitacion) {
         this.cedula = cedula;
         this.fechaLlegada = fechaLlegada;
         this.fechaSalida = fechaSalida;
@@ -34,19 +34,19 @@ public class Ingresos {
         this.cedula = cedula;
     }
 
-    public Date getFechaLlegada() {
+    public String getFechaLlegada() {
         return fechaLlegada;
     }
 
-    public void setFechaLlegada(Date fechaLlegada) {
+    public void setFechaLlegada(String fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 

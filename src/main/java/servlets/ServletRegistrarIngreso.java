@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.UsuariosController;
+import controller.IngresosController;
 
 /**
  * Servlet implementation class ServletUsuarioRegister
  */
-@WebServlet("/ServletRegistrarUsuarios")
-public class ServletRegistrarUsuarios extends HttpServlet {
+@WebServlet("/ServletRegistrarIngreso")
+public class ServletRegistrarIngreso extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletRegistrarUsuarios() {
+    public ServletRegistrarIngreso() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,16 +33,15 @@ public class ServletRegistrarUsuarios extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        UsuariosController usuario = new UsuariosController();
+        IngresosController ingreso = new IngresosController();
 
         String cedula = request.getParameter("cedula");
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String email = request.getParameter("email");
-        String telefono = request.getParameter("telefono");
-        String nacionalidad = request.getParameter("nacionalidad");
+        String fechaLlegada = request.getParameter("fechaLlegada");
+        String fechaSalida = request.getParameter("fechaSalida");
+        String ciudadOrigen = request.getParameter("ciudadOrigen");
+        int idHabitacion = Integer.parseInt(request.getParameter("idHabitacion"));
 
-        String result = usuario.registrarUsuario(cedula, nombre, apellido, email, telefono, nacionalidad);
+        String result = ingreso.registrarIngreso(cedula, fechaLlegada, fechaSalida, ciudadOrigen, idHabitacion);
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
