@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.IngresosController;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Servlet implementation class ServletUsuarioRegister
@@ -34,10 +39,22 @@ public class ServletRegistrarIngreso extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         IngresosController ingreso = new IngresosController();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 
         String cedula = request.getParameter("cedula");
-        String fechaLlegada = request.getParameter("fechaLlegada");
-        String fechaSalida = request.getParameter("fechaSalida");
+        Date fechaLlegada = new Date();
+        try {
+            fechaLlegada = sdf.parse(request.getParameter("fechaLlegada"));
+        } catch (ParseException ex) {
+            Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Date fechaSalida = new Date();
+        try {
+            fechaSalida = sdf.parse(request.getParameter("fechaSalida"));
+        } catch (ParseException ex) {
+            Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String ciudadOrigen = request.getParameter("ciudadOrigen");
         int idHabitacion = Integer.parseInt(request.getParameter("idHabitacion"));
 

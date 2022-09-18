@@ -5,17 +5,29 @@ import com.google.gson.Gson;
 
 import beans.Ingresos;
 import connection.DBConnection;
+import connection.Queries;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class IngresosController implements IIngresosController {
 
     @Override
-    public String registrarIngreso(String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen,
+    public String registrarIngreso(String cedula, Date fechaLlegada, Date fechaSalida, String ciudadOrigen,
             int idHabitacion) {
 
         Gson gson = new Gson();
 
         DBConnection con = new DBConnection();
-        String sql = "INSERT INTO ingresos VALUES('" + cedula + "', '" + fechaLlegada + "', '" + fechaSalida
+        
+        Queries querie = new Queries();
+        int id = querie.generarId("id_registro", "ingresos");
+
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+
+        String fechaLlegadaFormateada = sdf.format(fechaLlegada);
+        String fechaSalidaFormateada = sdf.format(fechaSalida);
+
+        String sql = "INSERT INTO ingresos VALUES('" + id + "', '" + cedula + "', '" + fechaLlegadaFormateada + "', '" + fechaSalidaFormateada
                 + "', '" + ciudadOrigen + "', '" + idHabitacion + "')";
 
         try {
@@ -27,11 +39,15 @@ public class IngresosController implements IIngresosController {
             st.close();
 
             return gson.toJson(ingreso);
+
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
 
         } finally {
             con.desconectar();
+
+            System.out.println(id);
+            System.out.println(fechaSalidaFormateada);
         }
 
         return "false";

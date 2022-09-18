@@ -1,24 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package beans;
 
 import java.util.Date;
 
-/**
- *
- * @author Jeison
- */
 public class Ingresos {
     
     private String cedula;
-    private String fechaLlegada;
-    private String fechaSalida;
+    private Date fechaLlegada;
+    private Date fechaSalida;
     private String ciudadOrigen;
     private Integer idHabitacion;
 
-    public Ingresos(String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen, Integer idHabitacion) {
+    public Ingresos(String cedula, Date fechaLlegada, Date fechaSalida, String ciudadOrigen, Integer idHabitacion) {
         this.cedula = cedula;
         this.fechaLlegada = fechaLlegada;
         this.fechaSalida = fechaSalida;
@@ -34,19 +26,19 @@ public class Ingresos {
         this.cedula = cedula;
     }
 
-    public String getFechaLlegada() {
+    public Date getFechaLlegada() {
         return fechaLlegada;
     }
 
-    public void setFechaLlegada(String fechaLlegada) {
+    public void setFechaLlegada(Date fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
 
-    public String getFechaSalida() {
+    public Date getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
