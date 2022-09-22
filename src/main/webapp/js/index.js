@@ -1,19 +1,18 @@
 $(document).ready(function () {
-    
+
     $("#registrar-usuarios").submit(function (event) {
 
         event.preventDefault();
         registrarUsuario();
     });
-    
+
     $("#registrar-ingreso").submit(function (event) {
 
         event.preventDefault();
         registrarIngreso();
     });
-
-
 });
+
 function registrarUsuario() {
 
     let cedula = $("#input-cedula").val();
@@ -38,7 +37,7 @@ function registrarUsuario() {
         success: function (result) {
             let parsedResult = JSON.parse(result);
 
-            if (parsedResult != false) {
+            if (parsedResult !== false) {
                 $("#register-error").addClass("d-none");
                 let cedula = parsedResult['cedula'];
                 $("#register-successful").removeClass("d-none");
@@ -73,7 +72,7 @@ function registrarIngreso() {
         success: function (result) {
             let parsedResult = JSON.parse(result);
 
-            if (parsedResult != false) {
+            if (parsedResult !== false) {
                 $("#register-error").addClass("d-none");
                 let cedula = parsedResult['cedula'];
                 $("#register-successful").removeClass("d-none");

@@ -6,9 +6,8 @@ import com.google.gson.Gson;
 import beans.Usuarios;
 import connection.DBConnection;
 
-public class UsuariosController implements IUsuariosController {
+public class UsuariosController {
 
-    @Override
     public String registrarUsuario(String cedula, String nombre, String apellido, String email,
             String telefono, String nacionalidad) {
 
@@ -37,5 +36,5 @@ public class UsuariosController implements IUsuariosController {
         return "false";
 
     }
-    
+
 }

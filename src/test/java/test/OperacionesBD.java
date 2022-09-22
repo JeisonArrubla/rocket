@@ -2,6 +2,7 @@ package test;
 
 import beans.Usuarios;
 import connection.DBConnection;
+import controller.IngresosController;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -13,6 +14,10 @@ public class OperacionesBD {
         //listarUsuarios();
         //actualizarUsuarios("1111222333", "Miguel", "Pérez", "mperez@gmail.com", "3112113344", "peruano");
         registrarIngreso();
+        
+        IngresosController ingresos = new IngresosController();
+        
+        System.out.println(ingresos.listar());
     }
 
     public static void actualizarUsuarios(String cedula, String nombre, String apellido, String email, String telefono, String nacionalidad) {

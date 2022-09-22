@@ -20,16 +20,19 @@
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Inicio</a>
+            <a class="navbar-brand" href="index.html">Editar usuarios</a>
         </nav>
         <main class="p-4 d-flex justify-content-center">
             <div class="card sizeDiv">
                 <div class="card-body">
                     <form id="registrar-usuarios" class="pb-4">
                         <div class="form-group">
-                            <label for="input-cedula">Cédula</label>
-                            <input type="text" class="form-control" id="input-cedula" placeholder="Cédula del usuario" required>
                             <div class="form-group">
+                                <label for="input-cedula">Ingrese la cédula del usuario que desea actualizar</label>
+                                <input type="text" class="form-control" id="input-cedula" placeholder="Cédula del usuario" required>
+                            </div>
+                            <input type="submit" class="btn btn-primary" id="register-btn" value="Consultar usuario" />
+                            <div class="form-group mt-5">
                                 <label for="input-nombre">Nombre</label>
                                 <input type="text" class="form-control" id="input-nombre" placeholder="Nombre" required>
                             </div>
@@ -43,13 +46,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-telefono">Teléfono</label>
-                                <input type="text" class="form-control" id="input-telefono" placeholder="Telefono" required>
+                                <input type="text" class="form-control" id="input-telefono" placeholder="Teléfono" required>
                             </div>
                             <div class="form-group">
                                 <label for="input-nacionalidad">Nacionalidad</label>
                                 <input type="text" class="form-control" id="input-nacionalidad" placeholder="Nacionalidad" required>
                             </div>
-                            <input type="submit" class="btn btn-primary" id="register-btn" value="Registrar usuario" />
+                            <input type="submit" class="btn btn-primary" id="register-btn" value="Actualizar usuario" />
                     </form>
                     <div id="register-error" class="alert alert-danger d-none" role="alert"></div>
                     <div id="register-successful" class="alert alert-info d-none" role="alert"></div>

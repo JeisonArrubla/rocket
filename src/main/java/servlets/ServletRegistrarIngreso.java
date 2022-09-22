@@ -13,16 +13,14 @@ import controller.IngresosController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Servlet implementation class ServletUsuarioRegister
+ * Servlet implementation class ServletRegistrarIngreso
  */
 @WebServlet("/ServletRegistrarIngreso")
 public class ServletRegistrarIngreso extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,21 +38,25 @@ public class ServletRegistrarIngreso extends HttpServlet {
 
         IngresosController ingreso = new IngresosController();
         
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+        //SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 
         String cedula = request.getParameter("cedula");
-        Date fechaLlegada = new Date();
+        //Date fechaLlegada = new Date();
+        /*
         try {
             fechaLlegada = sdf.parse(request.getParameter("fechaLlegada"));
         } catch (ParseException ex) {
-            Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
         }
         Date fechaSalida = new Date();
         try {
             fechaSalida = sdf.parse(request.getParameter("fechaSalida"));
         } catch (ParseException ex) {
-            Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ServletRegistrarIngreso.class.getName()).log(Level.SEVERE, null, ex);
         }
+        */
+        String fechaLlegada = request.getParameter("fechaLlegada");
+        String fechaSalida = request.getParameter("fechaSalida");
         String ciudadOrigen = request.getParameter("ciudadOrigen");
         int idHabitacion = Integer.parseInt(request.getParameter("idHabitacion"));
 
