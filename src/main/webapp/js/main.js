@@ -87,5 +87,5 @@ function mostrarUsuarios(usuarios) {
                 '<td>' + usuario.telefono + '</td>' +
                 '<td>' + usuario.nacionalidad + '</td></tr>';
     });
-    $("#registros-tbody").html(contenido);
+    $("#usuarios-tbody").html(contenido);
 }
