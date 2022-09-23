@@ -1,5 +1,6 @@
-    package connection;
+    package utilities;
 
+import connection.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -20,11 +21,13 @@ public class Queries {
             rs = ps.executeQuery();
 
             while (rs.next()) {
+                
                 id = rs.getInt(1) + 1;
             }
         } catch (Exception e) {
 
             System.out.println("Error: " + e.getMessage());
+            
         } finally {
 
             try {
@@ -32,6 +35,7 @@ public class Queries {
                 ps.close();
                 rs.close();
                 conn.desconectar();
+                
             } catch (Exception e) {
             }
         }

@@ -6,10 +6,10 @@ $(document).ready(function () {
         registrarUsuario();
     });
 
-    $("#registrar-ingreso").submit(function (event) {
+    $("#ingresar-registro").submit(function (event) {
 
         event.preventDefault();
-        registrarIngreso();
+        ingresarRegistro();
     });
 });
 
@@ -50,7 +50,7 @@ function registrarUsuario() {
     });
 }
 
-function registrarIngreso() {
+function ingresarRegistro() {
 
     let cedula = $("#input-cedula").val();
     let fechaLlegada = $("#input-fechaLlegada").val();
@@ -61,7 +61,7 @@ function registrarIngreso() {
     $.ajax({
         type: "GET",
         dataType: "html",
-        url: "./ServletRegistrarIngreso",
+        url: "./ServletIngresarRegistro",
         data: $.param({
             cedula: cedula,
             fechaLlegada: fechaLlegada,
@@ -74,7 +74,6 @@ function registrarIngreso() {
 
             if (parsedResult !== false) {
                 $("#register-error").addClass("d-none");
-                let cedula = parsedResult['cedula'];
                 $("#register-successful").removeClass("d-none");
                 $("#register-successful").html("Registro exitoso");
             } else {

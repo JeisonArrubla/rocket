@@ -2,22 +2,40 @@ package test;
 
 import beans.Usuarios;
 import connection.DBConnection;
-import controller.IngresosController;
+import controller.UsuariosController;
+import controller.RegistrosController;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class OperacionesBD {
 
     public static void main(String[] args) {
+        
+        UsuariosController usuarios = new UsuariosController();
+        RegistrosController registros = new RegistrosController();
 
         //registrarUsuarios();
         //listarUsuarios();
         //actualizarUsuarios("1111222333", "Miguel", "Pérez", "mperez@gmail.com", "3112113344", "peruano");
-        registrarIngreso();
-        
-        IngresosController ingresos = new IngresosController();
-        
-        System.out.println(ingresos.listar());
+        //ingresarRegistro();
+        System.out.println(registros.listarRegistros());
+        System.out.println(usuarios.listarUsuarios());
+    }
+
+    public static void registrarUsuarios() {
+        DBConnection conn = new DBConnection();
+
+        String sql = "INSERT INTO usuarios (cedula, nombre, apellido, email, telefono, nacionalidad) VALUES\n"
+                + "(\"1111444555\", \"Marcos\", \"Méndez\", \"mm@gmail.com\", \"3113002211\", \"Mexicano\")";
+
+        try {
+            Statement st = conn.getConnection().createStatement();
+            st.executeUpdate(sql);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            conn.desconectar();
+        }
     }
 
     public static void actualizarUsuarios(String cedula, String nombre, String apellido, String email, String telefono, String nacionalidad) {
@@ -68,23 +86,7 @@ public class OperacionesBD {
 
     }
 
-    public static void registrarUsuarios() {
-        DBConnection conn = new DBConnection();
-
-        String sql = "INSERT INTO usuarios (cedula, nombre, apellido, email, telefono, nacionalidad) VALUES\n"
-                + "(\"1111444555\", \"Marcos\", \"Méndez\", \"mm@gmail.com\", \"3113002211\", \"Mexicano\")";
-
-        try {
-            Statement st = conn.getConnection().createStatement();
-            st.executeUpdate(sql);
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        } finally {
-            conn.desconectar();
-        }
-    }
-
-    public static void registrarIngreso() {
+    public static void ingresarRegistro() {
         DBConnection conn = new DBConnection();
 
         String sql = "INSERT INTO ingresos (cedula, fecha_llegada, fecha_salida, ciudad_origen, id_habitacion) VALUES\n"
@@ -98,8 +100,7 @@ public class OperacionesBD {
         } finally {
             conn.desconectar();
         }
-        
+
         System.out.println("Ingreso registrado con éxitoso.");
     }
-
 }

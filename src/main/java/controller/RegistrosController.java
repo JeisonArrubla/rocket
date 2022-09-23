@@ -3,14 +3,14 @@ package controller;
 import java.sql.Statement;
 import com.google.gson.Gson;
 
-import beans.Ingresos;
+import beans.Registros;
 import connection.DBConnection;
-import connection.Queries;
+import utilities.Queries;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IngresosController {
+public class RegistrosController {
 
     public String registrarIngreso(String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen,
             int idHabitacion) {
@@ -20,21 +20,17 @@ public class IngresosController {
         DBConnection con = new DBConnection();
 
         Queries querie = new Queries();
-        int id = querie.generarId("id_registro", "ingresos");
+        int id = querie.generarId("id_registro", "registros");
 
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-        String fechaLlegadaFormateada = fechaLlegada;
-        String fechaSalidaFormateada = fechaSalida;
-
-        String sql = "INSERT INTO ingresos VALUES('" + id + "', '" + cedula + "', '" + fechaLlegadaFormateada + "', '"
-                + fechaSalidaFormateada + "', '" + ciudadOrigen + "', '" + idHabitacion + "')";
+        String sql = "INSERT INTO registros VALUES('" + id + "', '" + cedula + "', '" + fechaLlegada + "', '"
+                + fechaSalida + "', '" + ciudadOrigen + "', '" + idHabitacion + "')";
 
         try {
+
             Statement st = con.getConnection().createStatement();
             st.executeUpdate(sql);
 
-            Ingresos ingreso = new Ingresos(id, cedula, fechaLlegada, fechaSalida, ciudadOrigen, idHabitacion);
+            Registros ingreso = new Registros(id, cedula, fechaLlegada, fechaSalida, ciudadOrigen, idHabitacion);
 
             st.close();
 
@@ -42,29 +38,20 @@ public class IngresosController {
 
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
-
+            
         } finally {
             con.desconectar();
         }
-
         return "false";
-
     }
 
-    public String listar() {//boolean ordenar, String orden
+    public String listarRegistros() {
 
         Gson gson = new Gson();
-
-        DBConnection con = new DBConnection();
-        String sql = "SELECT * FROM ingresos";
-        /*
-        if (ordenar == true) {
-            sql += " ORDER BY cedula " + orden;
-        }
-        */
-
         List<String> registros = new ArrayList<String>();
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        DBConnection con = new DBConnection();
+
+        String sql = "SELECT * FROM registros";
 
         try {
 
@@ -80,19 +67,18 @@ public class IngresosController {
                 String ciudad_origen = rs.getString("ciudad_origen");
                 int id_habitacion = rs.getInt("id_habitacion");
 
-                Ingresos ingreso = new Ingresos(id, cedula, fecha_llegada, fecha_salida, ciudad_origen, id_habitacion);
+                Registros ingreso = new Registros(id, cedula, fecha_llegada, fecha_salida, ciudad_origen, id_habitacion);
 
                 registros.add(gson.toJson(ingreso));
-
             }
         } catch (Exception ex) {
+            
             System.out.println("Error: " + ex.getMessage());
+            
         } finally {
+            
             con.desconectar();
         }
-
         return gson.toJson(registros);
-
     }
-
 }

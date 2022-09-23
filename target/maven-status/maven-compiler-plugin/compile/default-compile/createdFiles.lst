@@ -1,10 +1,11 @@
-servlets\ServletRegistrosListar.class
-controller\IngresosController.class
-servlets\ServletRegistrarIngreso.class
+utilities\Queries.class
+controller\RegistrosController.class
+servlets\ServletIngresarRegistro.class
 beans\Habitaciones.class
 servlets\ServletRegistrarUsuarios.class
-connection\Queries.class
 controller\UsuariosController.class
 beans\Usuarios.class
-beans\Ingresos.class
+beans\Registros.class
+servlets\ServletListarRegistros.class
+servlets\ServletListarUsuarios.class
 connection\DBConnection.class

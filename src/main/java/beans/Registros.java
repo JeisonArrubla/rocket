@@ -2,7 +2,7 @@ package beans;
 
 import java.util.Date;
 
-public class Ingresos {
+public class Registros {
 
     private Integer idRegistro;
     private String cedula;
@@ -11,7 +11,7 @@ public class Ingresos {
     private String ciudadOrigen;
     private Integer idHabitacion;
 
-    public Ingresos(Integer idRegistro, String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen, Integer idHabitacion) {
+    public Registros(Integer idRegistro, String cedula, String fechaLlegada, String fechaSalida, String ciudadOrigen, Integer idHabitacion) {
         this.idRegistro = idRegistro;
         this.cedula = cedula;
         this.fechaLlegada = fechaLlegada;
