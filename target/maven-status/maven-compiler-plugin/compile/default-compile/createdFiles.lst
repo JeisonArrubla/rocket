@@ -1,4 +1,11 @@
-servlets\PruebaServlet.class
-beans\Usuarios.class
-beans\Ingresos.class
+utilities\Queries.class
+controller\RegistrosController.class
+servlets\ServletIngresarRegistro.class
 beans\Habitaciones.class
+servlets\ServletRegistrarUsuarios.class
+controller\UsuariosController.class
+beans\Usuarios.class
+beans\Registros.class
+servlets\ServletListarRegistros.class
+servlets\ServletListarUsuarios.class
+connection\DBConnection.class

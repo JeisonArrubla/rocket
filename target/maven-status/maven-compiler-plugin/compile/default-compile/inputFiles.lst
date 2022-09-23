@@ -1,4 +1,11 @@
-C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\servlets\PruebaServlet.java
-C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\beans\Ingresos.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\servlets\ServletIngresarRegistro.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\utilities\Queries.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\controller\RegistrosController.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\servlets\ServletListarRegistros.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\connection\DBConnection.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\controller\UsuariosController.java
 C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\beans\Habitaciones.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\servlets\ServletRegistrarUsuarios.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\beans\Registros.java
 C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\beans\Usuarios.java
+C:\Users\jeiso\OneDrive\Documentos\NetBeansProjects\Rocket\src\main\java\servlets\ServletListarUsuarios.java

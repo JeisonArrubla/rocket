@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+        <link href="css/index.css" rel="stylesheet">
+        <title>Registrar usuarios</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Editar usuarios</a>
+        </nav>
+        <main class="p-4 d-flex justify-content-center">
+            <div class="card sizeDiv">
+                <div class="card-body">
+                    <form id="registrar-usuarios" class="pb-4">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="input-cedula">Ingrese la cédula del usuario que desea actualizar</label>
+                                <input type="text" class="form-control" id="input-cedula" placeholder="Cédula del usuario" required>
+                            </div>
+                            <input type="submit" class="btn btn-primary" id="register-btn" value="Consultar usuario" />
+                            <div class="form-group mt-5">
+                                <label for="input-nombre">Nombre</label>
+                                <input type="text" class="form-control" id="input-nombre" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-apellido">Apellido</label>
+                                <input type="text" class="form-control" id="input-apellido" placeholder="Apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-email">Email</label>
+                                <input type="text" class="form-control" id="input-email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-telefono">Teléfono</label>
+                                <input type="text" class="form-control" id="input-telefono" placeholder="Teléfono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-nacionalidad">Nacionalidad</label>
+                                <input type="text" class="form-control" id="input-nacionalidad" placeholder="Nacionalidad" required>
+                            </div>
+                            <input type="submit" class="btn btn-primary" id="register-btn" value="Actualizar usuario" />
+                    </form>
+                    <div id="register-error" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="register-successful" class="alert alert-info d-none" role="alert"></div>
+                </div>
+            </div> 
+        </main>
+    </body>
+</html>
