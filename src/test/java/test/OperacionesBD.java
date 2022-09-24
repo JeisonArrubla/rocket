@@ -18,8 +18,10 @@ public class OperacionesBD {
         //listarUsuarios();
         //actualizarUsuarios("1111222333", "Miguel", "Pérez", "mperez@gmail.com", "3112113344", "peruano");
         //ingresarRegistro();
-        System.out.println(registros.listarRegistros());
-        System.out.println(usuarios.listarUsuarios());
+        //System.out.println(registros.listarRegistros());
+        //System.out.println(usuarios.listarUsuarios());
+        //System.out.println(usuarios.consultarUsuario("1020333444"));
+        //System.out.println(usuarios.actualizarUsuario("1111222333", "Pedro", "Molina", "pmol@gmail.com", "3203025566", "Mexicano"));
     }
 
     public static void registrarUsuarios() {
