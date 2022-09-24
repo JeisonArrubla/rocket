@@ -14,25 +14,36 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="js/index.js"></script>
-        <link href="css/index.css" rel="stylesheet">
-        <title>Registrar usuarios</title>
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+              integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+              crossorigin="anonymous" />
+
+        <script src="js/main.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
+        <title>Editar usuario</title>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Editar usuarios</a>
+            <a class="navbar-brand" href="index.html">Inicio</a>
         </nav>
+
         <main class="p-4 d-flex justify-content-center">
             <div class="card sizeDiv">
                 <div class="card-body">
-                    <form id="registrar-usuarios" class="pb-4">
+                    <form id="consultar-usuario" class="pb-4">
+                        <div class="form-group">
+                            <label for="input-cedula">Cédula</label>
+                            <input type="text" class="form-control" id="input-cedula" placeholder="Cédula del usuario" required>
+                        </div>
+                        <input type="submit" class="btn btn-primary" id="register-btn" value="Consultar usuario" />
+                    </form>
+                    <div id="query-error" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="query-successful" class="alert alert-info d-none" role="alert"></div>
+                    <form id="editar-usuario" class="pb-4">
                         <div class="form-group">
                             <div class="form-group">
-                                <label for="input-cedula">Ingrese la cédula del usuario que desea actualizar</label>
-                                <input type="text" class="form-control" id="input-cedula" placeholder="Cédula del usuario" required>
-                            </div>
-                            <input type="submit" class="btn btn-primary" id="register-btn" value="Consultar usuario" />
-                            <div class="form-group mt-5">
                                 <label for="input-nombre">Nombre</label>
                                 <input type="text" class="form-control" id="input-nombre" placeholder="Nombre" required>
                             </div>
@@ -46,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-telefono">Teléfono</label>
-                                <input type="text" class="form-control" id="input-telefono" placeholder="Teléfono" required>
+                                <input type="text" class="form-control" id="input-telefono" placeholder="Telefono" required>
                             </div>
                             <div class="form-group">
                                 <label for="input-nacionalidad">Nacionalidad</label>
@@ -54,10 +65,14 @@
                             </div>
                             <input type="submit" class="btn btn-primary" id="register-btn" value="Actualizar usuario" />
                     </form>
-                    <div id="register-error" class="alert alert-danger d-none" role="alert"></div>
-                    <div id="register-successful" class="alert alert-info d-none" role="alert"></div>
+                    <div id="update-error" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="update-successful" class="alert alert-info d-none" role="alert"></div>
                 </div>
-            </div> 
+            </div>
+
+
         </main>
+
+
     </body>
 </html>

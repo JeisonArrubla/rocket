@@ -6,6 +6,7 @@ servlets\ServletRegistrarUsuarios.class
 controller\UsuariosController.class
 beans\Usuarios.class
 beans\Registros.class
+servlets\ServletConsultarUsuario.class
 servlets\ServletListarRegistros.class
 servlets\ServletListarUsuarios.class
 connection\DBConnection.class
