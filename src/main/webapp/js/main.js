@@ -12,6 +12,12 @@ $(document).ready(function () {
         event.preventDefault();
         consultarUsuario();
     });
+    
+    $("#editar-usuario").submit(function (event) {
+
+        event.preventDefault();
+        actualizarUsuario();
+    });
 });
 
 function getRegistros(ordenar, orden) {
@@ -127,4 +133,41 @@ function mostrarUsuario(usuario) {
     document.getElementById("input-email").value = usuario.email;
     document.getElementById("input-telefono").value = usuario.telefono;
     document.getElementById("input-nacionalidad").value = usuario.nacionalidad;
+}
+
+function actualizarUsuario() {
+
+    let cedula = $("#input-cedula").val();
+    let nombre = $("#input-nombre").val();
+    let apellido = $("#input-apellido").val();
+    let email = $("#input-email").val();
+    let telefono = $("#input-telefono").val();
+    let nacionalidad = $("#input-nacionalidad").val();
+
+    $.ajax({
+        type: "GET",
+        dataType: "html",
+        url: "./ServletActualizarUsuario",
+        data: $.param({
+            cedula: cedula,
+            nombre: nombre,
+            apellido: apellido,
+            email: email,
+            telefono: telefono,
+            nacionalidad: nacionalidad
+        }),
+        success: function (result) {
+            let parsedResult = JSON.parse(result);
+
+            if (parsedResult !== false) {
+                $("#update-error").addClass("d-none");
+                let cedula = parsedResult['cedula'];
+                $("#update-successful").removeClass("d-none");
+                $("#update-successful").html("Usuario actualizado con exitoso");
+            } else {
+                $("#update-error").removeClass("d-none");
+                $("#update-error").html("Error en el registro del usuario");
+            }
+        }
+    });
 }

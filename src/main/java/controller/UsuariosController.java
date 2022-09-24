@@ -29,6 +29,7 @@ public class UsuariosController {
             st.close();
 
             return gson.toJson(usuario);
+            
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
 
@@ -110,5 +111,31 @@ public class UsuariosController {
             con.desconectar();
         }
         return gson.toJson(strUsuario);
+    }
+
+    public String actualizarUsuario(String cedula, String nombre, String apellido, String email,
+            String telefono, String nacionalidad) {
+
+        Gson gson = new Gson();
+
+        DBConnection con = new DBConnection();
+        String sql = "UPDATE usuarios SET nombre='" + nombre + "', apellido='" + apellido + "', email='" + email + "',telefono='" + telefono + "',nacionalidad='" + nacionalidad + "' WHERE cedula='" + cedula + "'";
+
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+
+            Usuarios usuario = new Usuarios(cedula, nombre, apellido, email, telefono, nacionalidad);
+
+            st.close();
+
+            return gson.toJson(usuario);
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+
+        } finally {
+            con.desconectar();
+        }
+        return "false";
     }
 }
