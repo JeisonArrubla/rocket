@@ -1,2 +1,0 @@
--- SO del servidor:              Win64
--- HeidiSQL Versión:             11.3.0.6295
