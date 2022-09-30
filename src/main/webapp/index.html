@@ -1,41 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Rocket</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <header class="header">
-            <nav class="container">
-                <nav class="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </nav>
-                <label for="" class="logo">
-                    <img src="./img/logo.png" alt="logo">
-                </label>
-                <nav class="menu">
-                    <a href="#">Inicio</a>
-                    <a href="#">Nosotros</a>
-                    <a href="#">Descargas</a>
-                    <a href="#">Contacto</a>
-                </nav>
-            </nav>
-        </header>
-        <div class="capa"></div>
-        <!--	--------------->
-        <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <a href="registrar-usuarios.html">Registrar usuarios</a>
-                    <a href="ingresar-registro.html">Ingresar registro</a>
-                    <a href="consultar-usuarios.html">Consultar usuarios</a>
-                    <a href="consultar-registros.html">Consultar registros</a>
-                    <a href="editar-usuario.html">Editar usuarios</a>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
+  <head>
+    <title>Rocket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="icon" type="icon" href="./img/logo.png" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="container">
+        <nav class="btn-menu">
+          <label for="btn-menu">☰</label>
+        </nav>
+
+        <!-------Inicio Tarjetas--------->
+        <div class="title-cards">
+          <h1>Hotel Rocket</h1>
         </div>
-    </body>
+        
+        <main class="container-card">
+          
+          <section class="card">
+            <figure>
+              <img src="./img/Entrada.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <h3>Sobre Nosotros</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptas quaerat voluptates adipisci cupiditate doloribus,
+                quisquam impedit perspiciatis distinctio nesciunt obcaecati!
+              </p>
+            </div>
+          </section>
+          
+          <section class="card">
+            <figure>
+              <img src="./img/Recepción.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <h3>Servicios</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut
+                minus optio adipisci reprehenderit eveniet amet sint quod
+                corrupti voluptatem odio?
+              </p>
+            </div>
+          </section>
+          
+          <section class="card">
+            <figure>
+              <img src="./img/Habitación.jpg" />
+            </figure>
+            <div class="contenido-card">
+              <h3>Contactos</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Ducimus ut enim officia id adipisci molestiae eveniet officiis
+                qui ratione sequi?
+              </p>
+            </div>
+          </section>
+        </main>
+        <!-------Fin tarjetas--------->
+      </nav>
+    </header>
+    <div class="capa"></div>
+    <!-------Navbar lateral--------->
+    <input type="checkbox" id="btn-menu" />
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+          <a href="registrar-usuarios.html">Registrar usuarios</a>
+          <a href="ingresar-registro.html">Ingresar registro</a>
+          <a href="consultar-usuarios.html">Consultar usuarios</a>
+          <a href="consultar-registros.html">Consultar registros</a>
+          <a href="editar-usuario.html">Editar usuarios</a>
+        </nav>
+        <label for="btn-menu">✖️</label>
+      </div>
+    </div>
+    <!------Pie de página--------->
+
+    <footer class="footer">
+      <p>
+        Misión TIC 2022 &copy; Universidad Tecnológica de Pereira &copy;
+        <b>Rocket App</b>
+      </p>
+    </footer>
+  </body>
 </html>
